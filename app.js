@@ -15,8 +15,9 @@ const afterPageRouting = require('./Routes/AfterLoginRouting/PageRouting');
 const categoryRouting = require('./Routes/AfterLoginRouting/Products');
 const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
-app.use('/',(request,response)=>{
+app.use('/', (req, res, next) => {
   console.log("KKJKK");
+  next(); // Important! Let requests continue to other routes
 });
 
 app.use(cors({
@@ -49,7 +50,7 @@ app.use(paymentRouting);
 // })
 
 connectDB().then(()=>{
-  app.listen(3005,()=>{
+  app.listen(process.env.PORT || 3005,()=>{
     console.log("Server Started Successfully");
   })
 })
