@@ -73,7 +73,7 @@ router.post('/confirmUserProvider',checkToken, async (request,response)=>{
 
   if(!userProvider)
   {
-    return response.status(401).json({message : "NO Provider for the User"});
+    return response.status(40001).json({message : "NO Provider for the User"});
   }
 
   return response.status(200).json({success : true, provider : userProvider.provider, message : "Provider Found"});
