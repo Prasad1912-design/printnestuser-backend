@@ -15,6 +15,9 @@ const afterPageRouting = require('./Routes/AfterLoginRouting/PageRouting');
 const categoryRouting = require('./Routes/AfterLoginRouting/Products');
 const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
+app.use('/',(request,response)=>{
+  console.log("KKJKK");
+});
 
 app.use(cors({
   origin: process.env.CLIENT_URL || "http://localhost:3000",

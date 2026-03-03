@@ -43,14 +43,14 @@ const checkToken = async (req, res, next) => {
         });
       }
 
-      // const companyDetails = await CompanyDb.findById(companyId);
+      const companyDetails = await CompanyDb.findById(companyId);
 
-      // if (!companyDetails) {
-      //   return res.status(404).json({
-      //     success: false,
-      //     message: "No registered organization"
-      //   });
-      // }
+      if (!companyDetails) {
+        return res.status(404).json({
+          success: false,
+          message: "No registered organization"
+        });
+      }
 
       // Attach data to request
       req.user = decoded;
