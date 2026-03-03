@@ -29,7 +29,7 @@ app.use(cors({
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('PrintNest Backend is Running 🚀');
+  res.send('PrintNest Backend is Runningsss 🚀');
 });
 
 //Before Login Routing
