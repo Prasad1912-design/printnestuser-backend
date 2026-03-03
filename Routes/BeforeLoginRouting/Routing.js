@@ -1,5 +1,4 @@
 const express = require('express');
-require("dotenv").config({ path: "./key.env" });
 const bcrypt = require('bcrypt');
 const multer = require('multer');
 const jwt = require('jsonwebtoken');
@@ -23,9 +22,9 @@ const resetPassword = require('../../EntityClasses/beforeLogin_entites/resetPass
 const transport = require('../../utility/mailConnection');
 
 cloudinary.config({
-  cloud_name: "delx00uwl",
-  api_key: "618781564515471",
-  api_secret: "jfar-t2_IL__KzW2LOaH62B03Mg"
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET
 });
 
 

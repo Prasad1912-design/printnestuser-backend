@@ -4,7 +4,7 @@ const checkToken = require('../../checkToken');
 const razorpay = require('../../config/razorpayConfig');
 const crypto = require('crypto');
 const {calculateShippingDetails} = require('./calculateShipping');
-require("dotenv").config({ path: "../../key.env" });
+// require("dotenv").config({ path: "../../key.env" });
 
 const cartCollection = require('../../EntityClasses/afterLogin_entities/cartCollection');
 const products = require('../../EntityClasses/afterLogin_entities/products');

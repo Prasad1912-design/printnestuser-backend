@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-const url = "mongodb+srv://Print_Nest2025:PrintNestDatabase2025@printnestcluster.bxcsimc.mongodb.net/PrintNestDB?retryWrites=true&w=majority&appName=PrintNestCluster";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(url, {
+    await mongoose.connect(process.env.MONGO_URL, {
       serverSelectionTimeoutMS: 5000
     });
     console.log("MongoDB Connected");

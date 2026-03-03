@@ -13,9 +13,9 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 // Cloudinary config
 cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME || "delx00uwl",
-  api_key: process.env.CLOUD_API_KEY || "618781564515471",
-  api_secret: process.env.CLOUD_API_SECRET || "jfar-t2_IL__KzW2LOaH62B03Mg",
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET
 });
 
 
