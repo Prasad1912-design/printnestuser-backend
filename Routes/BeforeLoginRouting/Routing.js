@@ -166,7 +166,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
         <!-- Button -->
         <div style="text-align:center; margin:30px 0;">
           <a 
-            href="http://localhost:3000/resetPassword?token=${resetToken}"
+            href="${process.env.CLIENT_URL}/resetPassword?token=${resetToken}"
             style="
               background:#0ea5a4;
               color:#ffffff;
