@@ -1,5 +1,6 @@
 const express = require('express');
-require("dotenv").config({ path: "./key.env" });
+// require("dotenv").config({ path: "./key.env" }); // for development
+require("dotenv").config();
 
 const app = express();
 const cors = require('cors');
@@ -17,7 +18,7 @@ const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: process.env.CLIENT_URL || "http://localhost:3000",
   credentials: true,   // 👈 THIS WAS MISSING
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
@@ -45,8 +46,10 @@ app.use(paymentRouting);
 //   response.json({message:"Login Successful"});
 // })
 
+const PORT = process.env.PORT || 5000;
+
 connectDB().then(()=>{
-  app.listen(3005,()=>{
+  app.listen(PORT,()=>{
     console.log("Server Started Successfully");
   })
 })
