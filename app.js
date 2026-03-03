@@ -18,7 +18,7 @@ const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:3000",
+  origin: "https://printnestuser-frontend.onrender.com/" || "http://localhost:3000",
   credentials: true,   // 👈 THIS WAS MISSING
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
