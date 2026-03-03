@@ -166,7 +166,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
         <!-- Button -->
         <div style="text-align:center; margin:30px 0;">
           <a 
-            href="http://localhost:3000/PrintNest/resetPassword?token=${resetToken}"
+            href="http://localhost:3000/resetPassword?token=${resetToken}"
             style="
               background:#0ea5a4;
               color:#ffffff;
@@ -209,7 +209,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
 
   if(!userEmail)
   {
-    return response.json({message : "No Registered User found", success : false});
+    return response.json({message : "No Registered User fosassund", success : false});
   }
   else
   {

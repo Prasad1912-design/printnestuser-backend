@@ -1,6 +1,5 @@
 const express = require('express');
-// require("dotenv").config({ path: "./key.env" }); // for development
-require("dotenv").config();
+require("dotenv").config({ path: "./key.env" });
 
 const app = express();
 const cors = require('cors');
@@ -17,14 +16,9 @@ const categoryRouting = require('./Routes/AfterLoginRouting/Products');
 const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
 
-const allowedOrigins = [
-  process.env.CLIENT_URL, // deployed frontend
-  "http://localhost:3000" // local frontend
-];
-
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
+  origin: "http://localhost:3000",
+  credentials: true,   // 👈 THIS WAS MISSING
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -33,9 +27,7 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('PrintNest Backend is Running 🚀');
-});
+
 
 //Before Login Routing
 app.use(routing);
@@ -53,10 +45,8 @@ app.use(paymentRouting);
 //   response.json({message:"Login Successful"});
 // })
 
-const PORT = process.env.PORT || 5000;
-
 connectDB().then(()=>{
-  app.listen(PORT,()=>{
+  app.listen(3005,()=>{
     console.log("Server Started Successfully");
   })
 })

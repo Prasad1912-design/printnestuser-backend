@@ -68,7 +68,7 @@ router.post('/changePass',checkToken, async (request,response)=>{
   return response.status(200).json({success : true, message : "Password Changed Successfully"});
 })
 
-router.post('/confirmUserProvider',checkToken, async (request,response)=>{
+router.post('/confirmUserProvider',checkToken, async (request,response)=>{    
   const userProvider = await RegisteredUser.findById(request.user.id).select('provider -_id');
 
   if(!userProvider)

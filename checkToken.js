@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "./key.env" });
+require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const CompanyDb = require("./EntityClasses/beforeLogin_entites/Domain_Company_Schema");
 
