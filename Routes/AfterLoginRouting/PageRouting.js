@@ -28,7 +28,7 @@ router.post('/uploadProducts', async (request,response)=>
   }
 })
 
-router.post('/confirmPassword',checkToken, async (request,response)=>{
+router.post('/confirmPassword', async (request,response)=>{
   const {currentpass, newPassword} = request.body;
 
   const user = await RegisteredUser.findById(request.user.id).select('+password');
@@ -56,7 +56,7 @@ router.post('/confirmPassword',checkToken, async (request,response)=>{
   return response.status(200).json({success : true, message : "Old Password Matches Successfully"});
 })
 
-router.post('/changePass',checkToken, async (request,response)=>{
+router.post('/changePass', async (request,response)=>{
   const {newPassword} = request.body;
 
   const hashedPassword = await bcrypt.hash(newPassword, 10);
@@ -68,7 +68,7 @@ router.post('/changePass',checkToken, async (request,response)=>{
   return response.status(200).json({success : true, message : "Password Changed Successfully"});
 })
 
-router.post('/confirmUserProvider',checkToken, async (request,response)=>{    
+router.post('/confirmUserProvider', async (request,response)=>{    
   const userProvider = await RegisteredUser.findById(request.user.id).select('provider -_id');
 
   if(!userProvider)
