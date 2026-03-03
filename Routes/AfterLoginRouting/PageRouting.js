@@ -68,16 +68,10 @@ router.post('/changePass',checkToken, async (request,response)=>{
   return response.status(200).json({success : true, message : "Password Changed Successfully"});
 })
 
-router.post('/confirmUserProvider',checkToken, async (request,response)=>{
-  const userProvider = await RegisteredUser.findById(request.user.id).select('provider -_id');
-
-  if(!userProvider)
-  {
-    return response.status(401).json({message : "NO Provider for the User"});
-  }
-
-  return response.status(200).json({success : true, provider : userProvider.provider, message : "Provider Found"});
-
-})
+router.post("/confirmUserProvider", checkToken, async (req, res) => {
+  const user = await RegisteredUser.findById(req.user.id);
+  if (!user) return res.status(404).json({ success: false, message: "User not found" });
+  res.json({ success: true, provider: user.provider }); // local / Google
+});
 
 module.exports = router;
