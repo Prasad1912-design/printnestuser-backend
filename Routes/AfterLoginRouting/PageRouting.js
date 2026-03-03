@@ -72,7 +72,7 @@ router.post('/confirmUserProvider',checkToken, async (request,response)=>{
   const userProvider = await RegisteredUser.findById(request.user.id).select('provider -_id');
 
   if(!userProvider)
-  {
+  {   
     return response.status(401).json({message : "NO Provider for the User"});
   }
 
