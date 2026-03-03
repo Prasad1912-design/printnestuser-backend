@@ -17,9 +17,14 @@ const categoryRouting = require('./Routes/AfterLoginRouting/Products');
 const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
 
+const allowedOrigins = [
+  process.env.CLIENT_URL, // deployed frontend
+  "http://localhost:3000" // local frontend
+];
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:3000",
-  credentials: true,   // 👈 THIS WAS MISSING
+  origin: allowedOrigins,
+  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
