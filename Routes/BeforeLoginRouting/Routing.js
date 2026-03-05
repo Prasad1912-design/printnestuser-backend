@@ -213,6 +213,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
   }
   else
   {
+    return response.json({message : "No Registered User fosassund", success : false});
     try
     {
       
