@@ -110,7 +110,7 @@ router.post('/loginApi', async (req, res) => {
 
     // 3. Generate JWT
     const payload = { id: user._id, OrgName:user.companyName, companyId :user.CompanyId, email: user.emailId };
-    const accessToken = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1m' });
+    const accessToken = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '2h' });
 
     res.json({ message: "Login Successful", success: true, accessToken });
 
@@ -213,7 +213,6 @@ router.post('/resetPasswordLink', async (request,response)=>{
   }
   else
   {
-    return response.json({message : "No Registered User fosassund", success : false});
     try
     {
       
