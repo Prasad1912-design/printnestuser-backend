@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const transportor = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: true, // true for port 465
+  secure: false, // MUST be false for 587
   auth: {
     user: process.env.GMAIL_PRINTNEST,
     pass: process.env.GMAIL_PASSWORD
