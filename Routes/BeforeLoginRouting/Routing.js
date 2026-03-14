@@ -209,7 +209,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
 
   if(!userEmail)
   {
-    return response.json({message : "No Registered User fosassund", success : false});
+    return response.json({message : "No Registered User found", success : false});
   }
   else
   {

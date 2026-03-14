@@ -16,7 +16,6 @@ const categoryRouting = require('./Routes/AfterLoginRouting/Products');
 const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
 app.use('/', (req, res, next) => {
-  console.log("KKJKK");
   next(); // Important! Let requests continue to other routes
 });
 
