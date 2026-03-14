@@ -257,7 +257,7 @@ await resetPassword.deleteOne({_id : data._id});
 
 const FeedbackMailData = {
   from: process.env.GMAIL_PRINTNEST, // your sender email
-  to: 'moreprasad1836@gmail.com',              // user email
+  to: 'printnestpune@gmail.com',              // user email
   subject: "Print Nest | Password Updated Successfully",
   html: `
   <div style="background-color:#f4f6f8; padding:30px; font-family: Arial, sans-serif;">
