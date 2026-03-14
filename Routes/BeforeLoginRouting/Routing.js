@@ -134,7 +134,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
 
   const mailData = {
     // from : process.env.GMAIL_PRINTNEST, // Already set the from in the resend in nodemailer we set manually
-    to : 'moreprasad1836@gmail.com',
+    to : 'printnestpune@gmail.com',
     subject : 'Reset Password Gmail',
   html: `
   <div style="background-color:#f4f6f8; padding:30px; font-family: Arial, sans-serif;">
