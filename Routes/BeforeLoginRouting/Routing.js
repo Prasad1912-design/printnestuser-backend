@@ -143,7 +143,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
       <!-- Header / Logo -->
       <div style="background:#0ea5a4; padding:20px; text-align:center;">
         <img 
-          src="https://res.cloudinary.com/delx00uwl/image/upload/v1767788643/PrintNestUsersLogo/rda7vgi9sdc7zp9v9evk.jpg"
+          src="https://res.cloudinary.com/delx00uwl/image/upload/v1773522510/Print_Nest.ico_em7spl.jpg"
           alt="Print Nest Logo"
           style="max-width:120px; margin-bottom:10px;"
         />
@@ -266,7 +266,7 @@ const FeedbackMailData = {
       <!-- Header / Logo -->
       <div style="background:#0ea5a4; padding:20px; text-align:center;">
         <img 
-          src="https://res.cloudinary.com/delx00uwl/image/upload/v1766659880/PrintNestUsersLogo/tvjxhnrgstoxwfodbeqy.jpg"
+          src="https://res.cloudinary.com/delx00uwl/image/upload/v1773522510/Print_Nest.ico_em7spl.jpg"
           alt="Print Nest Logo"
           style="max-width:120px; margin-bottom:10px;"
         />
