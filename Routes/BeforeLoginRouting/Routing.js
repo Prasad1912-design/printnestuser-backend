@@ -216,7 +216,7 @@ router.post('/resetPasswordLink', async (request,response)=>{
     try
     {
       
-      await transport.sendMail(mailData);
+      await transport(mailData);
     //After mail is sent save the email, resetToken and password in the collection
 
        await resetPassword.create({resetEmailId : userEmail.emailId, resetToken : hashToken, resetTokenExpires}) // resetTokenExpires column name and field name are same then we can write in both way resetTokenExpires : resetTokenExpires or resetTokenExpires only.
@@ -303,7 +303,7 @@ const FeedbackMailData = {
   `
 };
 
-await transport.sendMail(FeedbackMailData);
+await transport(FeedbackMailData);
 
    const payload = { id: updatedUser._id, OrgName:updatedUser.companyName, companyId :updatedUser.CompanyId, email: updatedUser.emailId };
     const accessToken = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '2h' });
