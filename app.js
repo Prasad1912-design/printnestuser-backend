@@ -15,6 +15,8 @@ const afterPageRouting = require('./Routes/AfterLoginRouting/PageRouting');
 const categoryRouting = require('./Routes/AfterLoginRouting/Products');
 const paymentRouting = require('./Routes/AfterLoginRouting/paymentRouting');
 
+const askQueryRouting = require('./Routes/AfterLoginRouting/askQueryRouting');
+
 app.use('/', (req, res, next) => {
   next(); // Important! Let requests continue to other routes
 });
@@ -43,6 +45,8 @@ app.use(afterPageRouting);
 app.use(categoryRouting);
 
 app.use(paymentRouting);
+
+app.use(askQueryRouting);
 
 // app.get('/placeOrder',checkToken,(request,response)=>{
 //   response.json({message:"Login Successful"});
