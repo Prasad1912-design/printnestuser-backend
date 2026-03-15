@@ -28,4 +28,4 @@ routes.post('/addNewQuery',checkToken, async (request,response)=>{
   }
 })
 
-modules.export = routes;
+module.exports = routes;
