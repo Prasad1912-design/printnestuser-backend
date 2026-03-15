@@ -5,7 +5,7 @@ const askQuery = require('../../EntityClasses/afterLogin_entities/askQuery');
 
 routes.post('/addNewQuery',checkToken, async (request,response)=>{
 
-  if (!request.body.query) {
+  if (!request.body.query || !request.body.query.trim()) {
   return response.status(400).json({
     success: false,
     message: " Query is required."
@@ -16,11 +16,9 @@ routes.post('/addNewQuery',checkToken, async (request,response)=>{
   {
 
   const InsertQuery = await askQuery.create({userId : request.user.id, query : request.body.query});
-
-    if(InsertQuery)
-    {
-      return response.status(200).json({success : true, message : "Your Query Successfully Submitted. We will contact you in short"});
-    }
+  
+  return response.status(200).json({success : true, message : "Your Query Successfully Submitted. We will contact you in short"});
+  
   }
   catch(e)
   {
